@@ -227,3 +227,103 @@ impl ApolloVacancyImporter {
         Ok(instance)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::io::Cursor;
+
+    fn vacancy_dates() -> (NaiveDate, NaiveDate) {
+        let vacancy_start = NaiveDate::from_ymd_opt(2025, 9, 24).expect("valid start");
+        let move_in = vacancy_start + chrono::Duration::days(14);
+        (vacancy_start, move_in)
+    }
+
+    #[test]
+    fn parse_datetime_supports_rfc3339_and_date_strings() {
+        let rfc = parse_datetime("2025-09-24T10:00:00Z").expect("parse rfc");
+        assert_eq!(rfc, NaiveDate::from_ymd_opt(2025, 9, 24).unwrap().and_hms_opt(10, 0, 0).unwrap());
+
+        let date = parse_datetime("2025-09-30").expect("parse date");
+        assert_eq!(date, NaiveDate::from_ymd_opt(2025, 9, 30).unwrap().and_hms_opt(0, 0, 0).unwrap());
+
+        assert!(parse_datetime("  ").is_none());
+        assert!(parse_datetime("not-a-date").is_none());
+    }
+
+    #[test]
+    fn normalize_name_removes_whitespace_and_case() {
+        let source = "\u{feff}Create  and  Publish  Listing  -  Leasing  Agent";
+        let normalized = normalize_name(source);
+        assert_eq!(normalized, "create and publish listing - leasing agent");
+    }
+
+    #[test]
+    fn apollo_row_detects_completion_and_touch() {
+        let row = ApolloRow {
+            name: "Task".to_string(),
+            completed_at: Some("2025-09-25T12:15:00Z".to_string()),
+            created_at: Some("2025-09-24T10:00:00Z".to_string()),
+            last_modified: Some("2025-09-24T12:00:00Z".to_string()),
+        };
+        assert_eq!(
+            row.completed_date().expect("completed"),
+            NaiveDate::from_ymd_opt(2025, 9, 25).unwrap()
+        );
+        assert!(row.touched());
+
+        let untouched = ApolloRow {
+            name: "Task".to_string(),
+            completed_at: None,
+            created_at: None,
+            last_modified: None,
+        };
+        assert!(!untouched.touched());
+    }
+
+    #[test]
+    fn importer_handles_duplicate_rows_without_overwriting() {
+        let csv = "Name,Created At,Completed At,Last Modified\n\
+Create and Publish Listing - Leasing Agent,2025-09-24T10:00:00Z,2025-09-25T12:00:00Z,2025-09-25T12:00:00Z\n\
+Create and Publish Listing - Leasing Agent,2025-09-24T11:00:00Z,,2025-09-24T12:30:00Z\n";
+        let (vacancy_start, move_in) = vacancy_dates();
+        let instance = ApolloVacancyImporter::from_reader(Cursor::new(csv), vacancy_start, move_in)
+            .expect("import succeeds");
+
+        let publish_listing = instance
+            .tasks()
+            .iter()
+            .find(|task| task.template.key == "marketing_publish_listing")
+            .expect("task present");
+        assert_eq!(publish_listing.status, TaskStatus::Completed);
+    }
+
+    #[test]
+    fn importer_ignores_unknown_task_names() {
+        let csv = "Name,Created At,Completed At,Last Modified\nUnknown Task,2025-09-24T10:00:00Z,,2025-09-24T12:00:00Z\n";
+        let (vacancy_start, move_in) = vacancy_dates();
+        let instance = ApolloVacancyImporter::from_reader(Cursor::new(csv), vacancy_start, move_in)
+            .expect("import succeeds");
+
+        assert!(instance
+            .tasks()
+            .iter()
+            .all(|task| task.status == TaskStatus::NotStarted));
+    }
+
+    #[test]
+    fn importer_from_path_propagates_io_errors() {
+        let (vacancy_start, move_in) = vacancy_dates();
+        let error = ApolloVacancyImporter::from_path(
+            "./does-not-exist.csv",
+            vacancy_start,
+            move_in,
+        )
+        .expect_err("expected io error");
+
+        match error {
+            ApolloVacancyImportError::Io(_) => {}
+            other => panic!("expected io error, got {other:?}"),
+        }
+    }
+}

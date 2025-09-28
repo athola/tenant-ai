@@ -1,22 +1,28 @@
-use axum::extract::State;
 use axum::http::{header, StatusCode};
 use axum::response::IntoResponse;
 use axum::routing::{get, post};
-use axum::{Json, Router};
+use axum::Extension;
+use axum::Json;
 use axum_prometheus::PrometheusMetricLayer;
 use chrono::{Local, NaiveDate};
 use clap::{Args, Parser, Subcommand};
 use metrics_exporter_prometheus::PrometheusHandle;
 use serde::{Deserialize, Serialize};
 use serde_json::json;
+use std::collections::HashMap;
 use std::io::Cursor;
 use std::path::PathBuf;
 use std::sync::atomic::{AtomicBool, Ordering};
-use std::sync::Arc;
+use std::sync::{Arc, Mutex};
 use tenant_ai::config::AppConfig;
 use tenant_ai::error::AppError;
 use tenant_ai::telemetry;
 use tenant_ai::workflows::apollo::ApolloVacancyImporter;
+use tenant_ai::workflows::vacancy::applications::{
+    application_router, AlertError, AlertPublisher, AppFolioAlert, ApplicationId,
+    ApplicationRecord, ApplicationRepository, ComplianceGuard, EvaluationConfig, RepositoryError,
+    VacancyApplicationService, VacancyApplicationStatus,
+};
 use tenant_ai::workflows::vacancy::{
     ComplianceAlertView, RoleLoadEntry, StageProgressEntry, TaskDetailView, TaskSnapshotView,
     VacancyReport, VacancyWorkflowBlueprint, VacancyWorkflowInstance,
@@ -26,7 +32,72 @@ use tracing::info;
 #[derive(Clone)]
 struct AppState {
     readiness: Arc<AtomicBool>,
-    metrics: PrometheusHandle,
+    metrics: Arc<PrometheusHandle>,
+}
+
+#[derive(Default, Clone)]
+struct InMemoryApplicationRepository {
+    records: Arc<Mutex<HashMap<ApplicationId, ApplicationRecord>>>,
+}
+
+impl ApplicationRepository for InMemoryApplicationRepository {
+    fn insert(&self, record: ApplicationRecord) -> Result<ApplicationRecord, RepositoryError> {
+        let mut guard = self.records.lock().expect("repository mutex poisoned");
+        if guard.contains_key(&record.profile.application_id) {
+            return Err(RepositoryError::Conflict);
+        }
+        guard.insert(record.profile.application_id.clone(), record.clone());
+        Ok(record)
+    }
+
+    fn update(&self, record: ApplicationRecord) -> Result<(), RepositoryError> {
+        let mut guard = self.records.lock().expect("repository mutex poisoned");
+        if guard.contains_key(&record.profile.application_id) {
+            guard.insert(record.profile.application_id.clone(), record);
+            Ok(())
+        } else {
+            Err(RepositoryError::NotFound)
+        }
+    }
+
+    fn fetch(&self, id: &ApplicationId) -> Result<Option<ApplicationRecord>, RepositoryError> {
+        let guard = self.records.lock().expect("repository mutex poisoned");
+        Ok(guard.get(id).cloned())
+    }
+
+    fn pending(&self, _limit: usize) -> Result<Vec<ApplicationRecord>, RepositoryError> {
+        let guard = self.records.lock().expect("repository mutex poisoned");
+        Ok(guard
+            .values()
+            .filter(|record| record.status == VacancyApplicationStatus::UnderReview)
+            .cloned()
+            .collect())
+    }
+}
+
+#[derive(Default, Clone)]
+struct InMemoryAlertPublisher {
+    events: Arc<Mutex<Vec<AppFolioAlert>>>,
+}
+
+impl AlertPublisher for InMemoryAlertPublisher {
+    fn publish(&self, alert: AppFolioAlert) -> Result<(), AlertError> {
+        let mut guard = self.events.lock().expect("alert mutex poisoned");
+        guard.push(alert);
+        Ok(())
+    }
+}
+
+fn default_evaluation_config() -> EvaluationConfig {
+    EvaluationConfig {
+        minimum_rent_to_income_ratio: 0.28,
+        minimum_credit_score: Some(650),
+        max_evictions: 0,
+        violent_felony_lookback_years: 7,
+        non_violent_lookback_years: 5,
+        misdemeanor_lookback_years: 3,
+        deposit_cap_multiplier: 2.0,
+    }
 }
 
 #[derive(Parser, Debug)]
@@ -179,18 +250,29 @@ async fn run_server(mut args: ServeArgs) -> Result<(), AppError> {
 
     let (prometheus_layer, prometheus_handle) = PrometheusMetricLayer::pair();
     let readiness_flag = Arc::new(AtomicBool::new(false));
-    let state = AppState {
+    let app_state = AppState {
         readiness: readiness_flag.clone(),
-        metrics: prometheus_handle,
+        metrics: Arc::new(prometheus_handle),
     };
 
-    let app = Router::new()
+    let compliance_guard = ComplianceGuard::new();
+    let repository = Arc::new(InMemoryApplicationRepository::default());
+    let alerts = Arc::new(InMemoryAlertPublisher::default());
+    let evaluation_config = default_evaluation_config();
+    let application_service = Arc::new(VacancyApplicationService::new(
+        compliance_guard,
+        repository,
+        alerts,
+        evaluation_config,
+    ));
+
+    let app = application_router(application_service.clone())
         .route("/health", get(healthcheck))
         .route("/ready", get(readiness_endpoint))
         .route("/metrics", get(metrics_endpoint))
         .route("/api/v1/vacancy/report", post(vacancy_report_endpoint))
-        .layer(prometheus_layer)
-        .with_state(state);
+        .layer(Extension(app_state))
+        .layer(prometheus_layer);
 
     let addr = config.server.socket_addr()?;
     let listener = tokio::net::TcpListener::bind(addr).await?;
@@ -240,7 +322,7 @@ async fn healthcheck() -> Json<serde_json::Value> {
     Json(json!({ "status": "ok" }))
 }
 
-async fn readiness_endpoint(State(state): State<AppState>) -> impl IntoResponse {
+async fn readiness_endpoint(Extension(state): Extension<AppState>) -> impl IntoResponse {
     let ready = state.readiness.load(Ordering::Relaxed);
     let status = if ready {
         StatusCode::OK
@@ -257,7 +339,7 @@ async fn readiness_endpoint(State(state): State<AppState>) -> impl IntoResponse 
     (status, Json(payload))
 }
 
-async fn metrics_endpoint(State(state): State<AppState>) -> impl IntoResponse {
+async fn metrics_endpoint(Extension(state): Extension<AppState>) -> impl IntoResponse {
     (
         StatusCode::OK,
         [(header::CONTENT_TYPE, "text/plain; version=0.0.4")],

@@ -1,7 +1,7 @@
 use chrono::{Duration, NaiveDate};
 use tenant_ai::workflows::vacancy::{
-    ComplianceSeverity, TaskStatus, VacancyRole, VacancyStage, VacancyWorkflowBlueprint,
-    VacancyWorkflowInstance,
+    ComplianceSeverity, TaskStatus, VacancyError, VacancyRole, VacancyStage,
+    VacancyWorkflowBlueprint, VacancyWorkflowInstance,
 };
 
 fn vacancy_dates() -> (NaiveDate, NaiveDate) {
@@ -157,4 +157,64 @@ fn summary_produces_human_readable_views() {
         .compliance_alerts
         .iter()
         .any(|alert| alert.severity_label == "Warning"));
+}
+
+#[test]
+fn due_date_rules_instantiate_expected_offsets() {
+    let vacancy_start = NaiveDate::from_ymd_opt(2025, 9, 1).expect("valid");
+    let move_in = NaiveDate::from_ymd_opt(2025, 9, 20).expect("valid");
+    let blueprint = VacancyWorkflowBlueprint::standard();
+    let instance = VacancyWorkflowInstance::new(&blueprint, vacancy_start, move_in);
+
+    let process_applications = instance
+        .tasks()
+        .iter()
+        .find(|task| task.template.key == "screening_process_applications")
+        .expect("process applications task");
+    assert_eq!(
+        process_applications.due_date,
+        vacancy_start + Duration::days(2)
+    );
+
+    let collect_funds = instance
+        .tasks()
+        .iter()
+        .find(|task| task.template.key == "leasing_collect_funds")
+        .expect("collect funds task");
+    assert_eq!(collect_funds.due_date, move_in - Duration::days(5));
+
+    let move_in_inspection = instance
+        .tasks()
+        .iter()
+        .find(|task| task.template.key == "leasing_conduct_move_in_inspection")
+        .expect("move in inspection task");
+    assert_eq!(move_in_inspection.due_date, move_in);
+}
+
+#[test]
+fn task_details_sorted_by_due_date_and_include_labels() {
+    let blueprint = VacancyWorkflowBlueprint::standard();
+    let vacancy_start = NaiveDate::from_ymd_opt(2025, 9, 1).expect("valid");
+    let target_move_in = vacancy_start + Duration::days(30);
+    let instance = VacancyWorkflowInstance::new(&blueprint, vacancy_start, target_move_in);
+
+    let details = instance.task_details();
+    assert!(!details.is_empty());
+    assert!(details.windows(2).all(|pair| pair[0].due_date <= pair[1].due_date));
+    assert!(details
+        .iter()
+        .any(|task| task.stage_label.contains("Marketing") && task.role_label.contains("Agent")));
+}
+
+#[test]
+fn set_status_returns_error_for_unknown_task_key() {
+    let blueprint = VacancyWorkflowBlueprint::standard();
+    let (vacancy_start, target_move_in) = vacancy_dates();
+    let mut instance = VacancyWorkflowInstance::new(&blueprint, vacancy_start, target_move_in);
+
+    let result = instance.set_status("non_existent_task", TaskStatus::Completed, None);
+    match result {
+        Err(VacancyError::TaskNotFound(key)) => assert_eq!(key, "non_existent_task"),
+        other => panic!("expected task not found error, got {other:?}"),
+    }
 }
