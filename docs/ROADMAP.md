@@ -52,3 +52,8 @@
     - Circuit breakers for integrations, queue backpressure, chaos testing plan.
 
 Each item targets a focused MR to keep reviews manageable and enable parallel workstreams.
+
+## Next Steps
+- Finalize configuration-driven server bootstrapping by persisting environment defaults to infrastructure-as-code and documenting override conventions.
+- Adapt the vacancy workflow importer into a persistent service layer once the sqlx-backed repositories land, enabling status histories beyond in-memory reports.
+- Draft the follow-on merge request scopes for AppFolio sync services so ticket, leasing, and payment automations can reuse the new workflow primitives.
