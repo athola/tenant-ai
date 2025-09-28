@@ -116,9 +116,9 @@
 4. **Pilot Enablement**: stand up dashboards for Apollo-specific SLAs (marketing turnaround, maintenance close rates, recertification compliance).
 
 ## Next Steps
-- Extend the importer mapping for Apollo tasks so New Resident, Renewal, and Delinquent Rent stages hydrate alongside the vacancy backbone built in this sprint.
-- Define data persistence requirements for workflow snapshots (storage schema, retention policy, export paths) before wiring the sqlx repositories.
-- Prototype stakeholder demos that exercise the HTTP vacancy report endpoint with realistic Apollo CSV payloads to validate compliance alert messaging.
+- Calibrate the vacancy application `EvaluationConfig` with Apollo-specific thresholds (rent-to-income, credit minimums, voucher coverage) and document required overrides for LIHTC units.
+- Draft the Postgres schema and retention policy for Apollo workflow snapshots so vacancy applications, onboarding, and delinquency stages persist beyond the in-memory adapters.
+- Assemble the next demo scenario that submits an application, polls status, and emits approval alerts through the HTTP endpoints alongside the vacancy readiness report.
 
 ## Documentation Follow-Up
 - Cross-link this plan from `docs/WORKFLOW_PLAYBOOKS.md` and future property-specific guides.

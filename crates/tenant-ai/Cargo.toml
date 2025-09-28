@@ -1,0 +1,21 @@
+[package]
+name = "tenant-ai"
+version = "0.1.0"
+edition = "2021"
+authors = ["Automation Team"]
+description = "Web service orchestrating agentic workflows for property management automation."
+license = "MIT"
+
+[dependencies]
+axum = { version = "0.7", default-features = false, features = ["json", "http1", "tokio"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"] }
+chrono = { version = "0.4", features = ["std", "serde"] }
+csv = "1"
+dotenvy = "0.15"
+thiserror = "1"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+tower = { version = "0.4", features = ["util"] }

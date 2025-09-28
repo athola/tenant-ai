@@ -54,6 +54,6 @@
 Each item targets a focused MR to keep reviews manageable and enable parallel workstreams.
 
 ## Next Steps
-- Finalize configuration-driven server bootstrapping by persisting environment defaults to infrastructure-as-code and documenting override conventions.
-- Adapt the vacancy workflow importer into a persistent service layer once the sqlx-backed repositories land, enabling status histories beyond in-memory reports.
-- Draft the follow-on merge request scopes for AppFolio sync services so ticket, leasing, and payment automations can reuse the new workflow primitives.
+- Replace the in-memory vacancy application adapters with SQLx-backed persistence and transport-specific alert publishers, then document configuration overrides for staging and production.
+- Extend the API surface with evaluation triggers, Prometheus counters, and integration tests covering the `/api/v1/vacancy/applications` endpoints before opening the pilot.
+- Shape the follow-on merge requests for AppFolio sync so vacancy applications, leasing, and payment automations share the workflow primitives and background evaluation jobs.
