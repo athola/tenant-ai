@@ -1,5 +1,7 @@
 # Workflow Playbooks
 
+See `docs/APOLLO_APARTMENTS_WORKFLOW_PLAN.md` for the Apollo pilot's detailed vacancy, leasing, maintenance, and collections workflows that expand on the universal playbooks below.
+
 ## Maintenance Requests
 - Intake: SMS/email/web form triggers ticket creation.
 - Classification: Detect emergency keywords, unit damage indicators.
