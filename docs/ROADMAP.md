@@ -53,7 +53,21 @@
 
 Each item targets a focused MR to keep reviews manageable and enable parallel workstreams.
 
+## Modularization & Maintainability *(ahead of persistence + AppFolio sync)*
+- Carve the API crate into focused modules (`cli`, `server`, `routes`, `demo`, `infra`) behind a
+  minimal `lib.rs` facade so the binary exposes only the async `run` entrypoint.
+- Publish constrained facades for `tenant_ai::workflows::vacancy` and
+  `tenant_ai::workflows::vacancy::applications`, keeping compliance/evaluation internals
+  `pub(crate)` while exposing DTOs, routers, and services needed by HTTP callers.
+- Split vacancy reporting (summary, insights, views), Apollo importer layers, and evaluation
+  policies into testable components with private helpers and targeted `cfg(test)` utilities.
+- Restructure unit + integration tests into feature-focused suites (compliance, evaluation,
+  routing) that exercise public APIs and document the resulting boundaries in
+  `docs/ARCHITECTURE.md`.
+
 ## Next Steps
 - Replace the in-memory vacancy application adapters with SQLx-backed persistence and transport-specific alert publishers, then document configuration overrides for staging and production.
 - Extend the API surface with evaluation triggers, Prometheus counters, and integration tests covering the `/api/v1/vacancy/applications` endpoints before opening the pilot.
 - Shape the follow-on merge requests for AppFolio sync so vacancy applications, leasing, and payment automations share the workflow primitives and background evaluation jobs.
+- Settle on the recommended-action wording called out in `docs/VACANCY_INSIGHTS.md` and update the automation copy once approved.
+- Sequence the persistence work so readiness snapshots start landing in Postgres and can drive the owner pulse digests.

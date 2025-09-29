@@ -14,20 +14,58 @@
 
 ## Module Layout
 ```
-src/
-  main.rs              # Axum bootstrap & DI wiring
-  config/              # Environment, secrets, feature flags
-  api/                 # HTTP routes, typed request/response models
-  workflows/           # Agentic orchestration, playbooks, decision trees
-  integrations/
-    appfolio/          # REST client, webhooks, polling tasks
-    messaging/         # SMS, email, telephony providers
-  data/
-    models.rs          # Persistent entities & queries
-    repositories.rs    # Async traits for storage adapters
-  jobs/                # Async background workers & schedulers
-  telemetry/           # Logging, metrics, tracing setup
+services/api/
+  src/
+    main.rs            # thin Tokio bootstrap calling into lib facade
+    lib.rs             # public `run` entrypoint used by CLI and tests
+    cli.rs             # Clap command tree (`serve`, `demo`, `vacancy report`)
+    server.rs          # Axum listener wiring + DI for application services
+    routes.rs          # HTTP handlers (health, readiness, metrics, vacancy report)
+    demo.rs            # CLI-friendly orchestration + sample data rendering
+    infra.rs           # In-memory repositories, alert publisher, date parsing helpers
+
+crates/tenant-ai/
+  src/workflows/
+    apollo/
+      mod.rs           # `ApolloVacancyImporter` facade + error types
+      parser.rs        # CSV parsing + test helpers (private, exposed only via cfg(test))
+      normalizer.rs    # Name normalization utilities (private)
+      mapping.rs       # Apollo -> vacancy task mapping table (private)
+    vacancy/
+      mod.rs           # Workspace facade for blueprint + report + applications
+      blueprint.rs     # Static vacancy workflow definition (task templates)
+      domain.rs        # Vacancy domain enums/structs (public module)
+      instance.rs      # Runtime workflow instance + task detail projections
+      report/
+        mod.rs         # Report assembly + insight orchestration (insights kept private)
+        summary.rs     # Aggregation logic for stage/role rollups (private)
+        views.rs       # DTOs consumed by API clients (`VacancyReportSummary`, etc.)
+      applications/
+        mod.rs         # Facade re-exporting service, DTOs, router, repository traits
+        domain.rs      # Application DTOs shared with HTTP layer
+        compliance.rs  # Guard + policy wiring (pub(crate))
+        evaluation/
+          mod.rs       # Engine + configs (pub(crate) except DTOs)
+          config.rs    # Threshold configuration structs
+          rules.rs     # Scoring helpers (private)
+          policy.rs    # Decision policy evaluation (private)
+        repository.rs  # Trait definitions for persistence + alert publishers
+        router.rs      # Axum router for `/api/v1/vacancy/applications`
+        service.rs     # `VacancyApplicationService` orchestration
+        tests/         # Feature-focused unit tests (compliance, evaluation, routing)
 ```
+
+## Module Boundaries
+- `services/api` only depends on the public facades exposed by `tenant_ai::workflows` and keeps
+  implementation scaffolding (`infra`, `demo`, `cli`) scoped to `pub(crate)`.
+- `tenant_ai::workflows::vacancy` exposes:
+  - `VacancyWorkflowBlueprint`, `VacancyWorkflowInstance`, and `VacancyReport` for higher-level
+    orchestration.
+  - Public `domain` module for read-only DTOs (`VacancyStage`, `TaskStatus`, etc.).
+  - `report::views` for HTTP payloads while keeping insight generation private.
+- `tenant_ai::workflows::vacancy::applications` re-exports only the service facade, DTOs, router,
+  and repository traits. Compliance/evaluation engines remain `pub(crate)` for internal testing
+  while still configurable via `EvaluationConfig`.
 
 ## Event Flow
 1. External trigger hits `/webhooks/...` or `/events/...` endpoint.

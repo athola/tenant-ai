@@ -1,17 +1,10 @@
 pub mod applications;
 
 mod blueprint;
-mod domain;
+pub mod domain;
 mod instance;
-mod report;
+pub mod report;
 
 pub use blueprint::VacancyWorkflowBlueprint;
-pub use domain::{
-    ComplianceNote, ComplianceSeverity, DueDateRule, TaskStatus, VacancyError, VacancyRole,
-    VacancyStage,
-};
 pub use instance::{TaskDetailView, VacancyWorkflowInstance};
-pub use report::{
-    ComplianceAlertView, RoleLoadEntry, StageProgressEntry, TaskSnapshotView, VacancyReport,
-    VacancyReportSummary,
-};
+pub use report::VacancyReport;
