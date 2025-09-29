@@ -1,6 +1,6 @@
 use chrono::{Duration, NaiveDate};
 use tenant_ai::workflows::apollo::ApolloVacancyImporter;
-use tenant_ai::workflows::vacancy::{TaskStatus, VacancyWorkflowBlueprint};
+use tenant_ai::workflows::vacancy::{domain::TaskStatus, VacancyWorkflowBlueprint};
 
 fn sample_dates() -> (NaiveDate, NaiveDate) {
     let vacancy_start = NaiveDate::from_ymd_opt(2025, 9, 24).expect("valid vacancy start");

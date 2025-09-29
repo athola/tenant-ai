@@ -14,3 +14,7 @@ Build a unified automation layer that triages inbound tenant communications, syn
 - <5 minute average response time for critical maintenance triggers.
 - Automated handling of routine rent payment reminders and lease renewal nudges.
 - SLA compliance dashboards covering maintenance lifecycle, vacancy readiness, and onboarding flow.
+
+## Project Plan
+1. Settle on the recommended-action wording called out in `docs/VACANCY_INSIGHTS.md` and update the automation copy once approved.
+2. Sequence the persistence work so readiness snapshots start landing in Postgres and can drive the owner pulse digests.

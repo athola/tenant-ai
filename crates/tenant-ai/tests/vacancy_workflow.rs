@@ -1,6 +1,6 @@
 use chrono::{Duration, NaiveDate};
 use tenant_ai::workflows::vacancy::{
-    ComplianceSeverity, TaskStatus, VacancyError, VacancyRole, VacancyStage,
+    domain::{ComplianceSeverity, TaskStatus, VacancyError, VacancyRole, VacancyStage},
     VacancyWorkflowBlueprint, VacancyWorkflowInstance,
 };
 
@@ -200,7 +200,9 @@ fn task_details_sorted_by_due_date_and_include_labels() {
 
     let details = instance.task_details();
     assert!(!details.is_empty());
-    assert!(details.windows(2).all(|pair| pair[0].due_date <= pair[1].due_date));
+    assert!(details
+        .windows(2)
+        .all(|pair| pair[0].due_date <= pair[1].due_date));
     assert!(details
         .iter()
         .any(|task| task.stage_label.contains("Marketing") && task.role_label.contains("Agent")));

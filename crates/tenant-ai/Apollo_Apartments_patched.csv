@@ -1,0 +1,368 @@
+﻿Task ID,Created At,Completed At,Last Modified,Name,Section/Column,Assignee,Assignee Email,Start Date,Due Date,Tags,Notes,Projects,Parent task,Blocked By (Dependencies),Blocking (Dependencies)
+1211447932621799,2025-09-23,,2025-09-24,Vacancy Workflow,Untitled section,,,,,,,Apollo Apartments,,,
+1208704778510662,2025-09-24,,2025-09-24,Marketing and Advertising,,,,,,,,,Vacancy Workflow,,
+1208704778510660,2025-09-24,2025-09-25T14:30:00Z,2025-09-25T14:30:00Z,Create and Publish Listing - Leasing Agent,,,,,,,"Due Date: Same day as the unit is vacant.
+
+Description: Craft a compelling listing description, including the unit's key features, amenities, and rental price. Upload high-quality, professional photos and, if available, a virtual tour.",,Marketing and Advertising,,
+1208704778510661,2025-09-24,,2025-09-24,"Publish the listing to all marketing channels (e.g., Zillow, Apartments.com, social media).",,,,,,,"Note: Iowa Code § 562A.29 requires landlords to make ""reasonable efforts"" to re-rent a unit at a fair rental value if a previous tenant broke the lease. Effective marketing is a key component of this legal duty.",,Create and Publish Listing - Leasing Agent,,
+1208704778510659,2025-09-24,2025-09-26T15:45:00Z,2025-09-26T15:45:00Z,Update Vacancy in AppFolio ​- Leasing Agent,,,,,,,"Due Date: Same day as turnover completion.
+
+Description: Log in to AppFolio and change the unit status from ""Turnover"" to ""Vacant.""
+
+Rule: When the turnover task is marked complete, automatically create a new vacancy task and trigger an automated push to integrated listing sites.",,Marketing and Advertising,,
+1208704778510663,2025-09-24,,2025-09-24,Screening and Application,,,,,,,"Due Date: Daily.
+
+Description: Respond to all inquiries from prospective tenants promptly. Use a scheduling tool to organize showings.",,Vacancy Workflow,,
+1208704778510664,2025-09-24T09:00:00Z,,2025-09-27T17:10:00Z,Manage Inquiries and Schedule Showings - Leasing Agent,,,,,,,"Compliance Reminder
+
+    Treat everyone equally. All applicants and prospects must be treated the same regardless of race, color, religion, sex, disability, familial status, or national origin, as protected by the Fair Housing Act and the Iowa Civil Rights Act.
+    Do not ""steer"" prospects. Avoid making comments that could be interpreted as steering tenants toward or away from certain neighborhoods or units based on a protected class.
+",,Screening and Application,,
+1211455196964333,2025-09-24,,2025-09-24,Intake and Initial Response,,,,,,,"When a new lead comes in from an online listing or a call, act fast. The speed of your response is critical.
+    Respond to every inquiry. Under fair housing laws, you must respond to everyone equally and consistently to avoid the appearance of bias. Even if you're screening, don't ghost a prospect.
+    Use a standardized email or text template for your first response. This ensures consistency and efficiency. The template should acknowledge their inquiry and provide a link to your pre-screening criteria (e.g., minimum income, credit score, no prior evictions).
+    Offer specific showing times. Avoid a long back-and-forth about scheduling. Provide a few blocks of time for showings, such as ""Tuesday from 4-5 PM and Saturday from 10-11 AM."" This helps manage your time and volume.
+",,Manage Inquiries and Schedule Showings - Leasing Agent,,
+1211455196964334,2025-09-24,,2025-09-24,Pre-Screening and Information Gathering,,,,,,,"Before you meet in person, you can filter out those who are unlikely to qualify.
+    Request a pre-screening form or ask qualifying questions. Ask about their desired move-in date, household size, pets, and why they're moving. This helps you determine if the unit is a good fit and if they're a serious prospect.
+    Watch for red flags. Be aware of common red flags that may signal a problematic tenant, such as a large number of occupants showing up to the showing, a sense of extreme urgency to move in (which may indicate a prior eviction), or an unwillingness to provide basic information.
+    Refer them to your application. If they meet the initial criteria and are still interested, direct them to your online application. Make it clear that they need to submit an application to be considered for the unit.
+",,Manage Inquiries and Schedule Showings - Leasing Agent,,
+1211455196964335,2025-09-24,,2025-09-24,Scheduling and Confirmation,,,,,,,"Once a prospect is qualified and has expressed a serious interest, you can schedule a formal showing.
+    Use an online scheduling tool. This automates the process and sends reminders, reducing the likelihood of no-shows.
+    Send a confirmation message. Always confirm the appointment via email or text. This reinforces the appointment and provides a record of communication. The message should include the date, time, and exact meeting location.
+    Confirm all appointments. Even with a scheduling tool, a personal confirmation can make a good impression and reinforce professionalism.
+",,Manage Inquiries and Schedule Showings - Leasing Agent,,
+1208704778510665,2025-09-24,,2025-09-24,"For each showing, confirm the appointment via email or text message.",,,,,,,,,Screening and Application,,
+1208704778510666,2025-09-24,2025-09-28T18:05:00Z,2025-09-28T18:05:00Z,Process Rental Applications - Leasing Agent,,,,,,,"Due Date: Within 48 hours of receiving a completed application.
+
+Description: Review each application to ensure it is complete and meets all screening criteria.
+
+Ensure all screening is done consistently and in compliance with Fair Housing laws to avoid discrimination.",,Screening and Application,,
+1211455196964291,2025-09-24,,2025-09-24,Receive the application,,,,,,,The tenant submits a completed application with their claimed income and assets.,,Process Rental Applications - Leasing Agent,,
+1211455196964292,2025-09-24,,2025-09-24,Initial Review,,,,,,,The property manager reviews the application for completeness - requests applicant to complete any uncompleted sections.,,Process Rental Applications - Leasing Agent,,
+1211455196964293,2025-09-24,,2025-09-24,Request Documentation,,,,,,,"The compliance coordinator sends the applicant a list of required documentation, including the signed ""Authorization to Release Information"" form.",,Process Rental Applications - Leasing Agent,,
+1211455196964323,2025-09-24,,2025-09-24,Social Security / SSI - need an award letter from the Social Security Administration showing the monthly benefit amount,,,,,,,,,Request Documentation,,
+1211455196964324,2025-09-24,,2025-09-24,"Child Support - need a copy of the divorce decree or child support order, along with documentation of payments (e.g. canceled checks or a printout from a state's child support collection agency)",,,,,,,,,Request Documentation,,
+1211455196964325,2025-09-24,,2025-09-24,Unemployment - obtain a printout from the Iowa Workforce Development website showing weekly benefit amounts,,,,,,,,,Request Documentation,,
+1211455196964326,2025-09-24,,2025-09-24,"Self Employed -  For self-employed individuals, you must obtain a Self-Employed Income Affidavit and copies of the most recent year's tax returns (e.g., Form 1040 with a Schedule C).",,,,,,,,,Request Documentation,,
+1211455196964327,2025-09-24,,2025-09-24,"Employment Verification - The most reliable method is a signed Employment Verification Form sent directly to the employer. This form should ask for the employee's start date, pay rate, pay frequency, and any projected changes.",,,,,,,,,Request Documentation,,
+1208704778510668,2025-09-24,,2025-09-24,Verify employment and income.,,,,,,,,,Process Rental Applications - Leasing Agent,,
+1211455196964294,2025-09-24,,2025-09-24,Review and Calculate,,,,,,,"Once all documentation is received, the coordinator calculates the household's annualized income and compares it to the current IFA-published income limits for the unit and family size.",,Process Rental Applications - Leasing Agent,,
+1208704778510667,2025-09-24,,2025-09-24,Run a credit and background check.,,,,,,,,,Process Rental Applications - Leasing Agent,,
+1208704778510669,2025-09-24,,2025-09-24,Contact previous landlords for references.,,,,,,,,,Process Rental Applications - Leasing Agent,,
+1211455196964288,2025-09-24,,2025-09-24,Pre-Call Checklist,,,,,,,"Before you make the call, make sure you have the following information and have done your due diligence:
+    Written Consent: Ensure you have a signed rental application that includes a clause giving you permission to contact previous landlords. Without this, you could be violating the applicant's privacy rights.
+    Applicant Information: Have the applicant's name, the address of the previous rental, the dates of tenancy they provided, and the monthly rent amount they claim they paid.
+    Verification: Cross-reference the previous landlord's information to make sure they are, in fact, the owner or a legitimate property manager. You can do this by checking county tax records or searching for the management company online.
+",,Contact previous landlords for references.,,
+1211455196964290,2025-09-24,,2025-09-24,Phone Script,,,,,,,"Part 1: Introduction
+""Hello, my name is [Your Name] from [Your Company/Property Name]. I'm calling about a rental application for [Applicant's Name]. They listed you as a previous landlord. Is this a good time to speak?""
+
+    If yes: ""Thank you. I have their written consent to contact you to verify some information they provided on their application.""
+    If no: ""I understand. What would be a better time for me to call you back?""
+
+Part 2: Verification Questions
+This section is for confirming the basic facts and is a crucial first step in spotting a fake reference.
+    ""Can you confirm that [Applicant's Name] was a tenant at [Previous Property Address]?""
+    ""What were the dates of their tenancy?"" (Compare this to what the applicant provided.)
+    ""Was the monthly rent amount $[Rent Amount]?"" (Compare this to the applicant's information. A large discrepancy could be a red flag.)
+    ""Were there any other occupants (on or off the lease)?""
+
+Part 3: Behavioral Questions
+These questions delve into the tenant's habits and character. Focus on objective, fact-based questions rather than subjective opinions.
+    ""Did the tenant consistently pay rent on time and in full?""
+        Follow-up: ""Were there any late payments or missed payments?""
+    ""Did they give proper written notice before moving out?"" (This is an important indicator of a responsible tenant.)
+    ""How did they maintain the property? Was it left in good condition when they moved out?""
+        Follow-up: ""Did you need to make any deductions from their security deposit for damages beyond normal wear and tear?""
+    ""Were there any lease violations, such as unauthorized pets, unauthorized occupants, or smoking in the unit?""
+    ""Did you ever receive any complaints from neighbors or other tenants about noise or behavior?""
+    ""Would you rent to this person again?"" (This is often the most telling question. A simple ""yes"" is a strong positive, while hesitation or a ""no"" can indicate a problem. Be prepared to ask for a brief, factual reason why without prying into personal matters.)
+
+Part 4: Closing
+""Thank you so much for your time and for providing this information. It's a great help in our screening process. Have a good day.""",,Contact previous landlords for references.,,
+1211455196964295,2025-09-24,,2025-09-24,Finalize TIC,,,,,,,"The coordinator completes the official IFA Tenant Income Certification (TIC) form, ensuring all information is accurate and documented.",,Process Rental Applications - Leasing Agent,,
+1211455196964296,2025-09-24,,2025-09-24,File,,,,,,,The completed TIC and all supporting documents are signed by the tenant and placed in their file for future audits.,,Process Rental Applications - Leasing Agent,,
+1208704778510670,2025-09-24T09:00:00Z,,2025-09-29T12:45:00Z,Notify Applicants of Status - Leasing Agent,,,,,,,"Due Date: Within 72 hours of receiving an application.
+
+Description:
+
+Approved: Send the congratulatory email below outlining the next steps (e.g., security deposit payment, lease signing).
+
+Denied: Complete and send the ""Adverse Action"" letter below. This is a legal requirement if a denial is based on information from a consumer report (e.g., credit check, background check). The letter must include the name and contact information of the consumer reporting agency.",,Screening and Application,,
+1208704778510671,2025-09-24,,2025-09-24,Lease Signing and Move-In,,,,,,,"Due Date: Once the applicant is approved and a move-in date is set.
+
+Description: Draft the lease agreement with all legal terms, including rent amount, security deposit amount, and any applicable addendums.",,Vacancy Workflow,,
+1208704778510672,2025-09-24,2025-10-01T09:15:00Z,2025-10-01T09:15:00Z,Prepare Lease Agreement - Leasing Agent,,,,,,,,,Lease Signing and Move-In,,
+1208704778510673,2025-09-24,,2025-09-24,Send the lease to the new tenant for e-signature via AppFolio.,,,,,,,,,Prepare Lease Agreement - Leasing Agent,,
+1208704778510674,2025-09-24,2025-10-02T11:20:00Z,2025-10-02T11:20:00Z,Collect Funds - Property Manager/Accounting,,,,,,,"Due Date: Before the move-in date.
+
+Description: Collect the first month's rent and the security deposit as outlined in the lease.
+
+Note: Iowa Code § 562A.12 states that a security deposit cannot exceed two months' rent. Ensure the funds are correctly handled and recorded. The deposit must be held in a separate bank account, not commingled with the landlord's personal funds.",,Lease Signing and Move-In,,
+1208704778510675,2025-09-24T09:00:00Z,,2025-10-03T10:30:00Z,Conduct Move-In Inspection - Property Manager,,,,,,,"Due Date: On or before the move-in date.
+
+Description: Walk through the unit with the new tenant and document the property's condition using photos and a written report. Both parties should sign the report. This is a critical legal document for protecting the security deposit at the end of the tenancy.",,Lease Signing and Move-In,,
+1208704778510676,2025-09-24,,2025-09-24,Take and upload photos of all rooms and appliances to the inspection report.,,,,,,,,,Conduct Move-In Inspection - Property Manager,,
+1208704778510678,2025-09-24,,2025-09-24,Hand Over Keys & Welcome Tenant - Leasing Agent,,,,,,,"Due Date: On the move-in date.
+
+Description: Provide the tenant with all keys, access codes, and a welcome packet with important information (e.g., how to set up utilities, emergency contact numbers, and maintenance request procedures).",,Lease Signing and Move-In,,
+1208704778510679,2025-09-24,,2025-09-24,"Update the unit's status in AppFolio from ""Vacant"" to ""Occupied.""",,,,,,,,,Hand Over Keys & Welcome Tenant - Leasing Agent,,
+1208704778510680,2025-09-24,,,Start New Resident Workflow,,,,,,,,,Hand Over Keys & Welcome Tenant - Leasing Agent,,
+1211447932621795,2025-09-23,,2025-09-24,New Resident Workflow,Untitled section,,,,,,,Apollo Apartments,,,
+1208704778510681,2025-09-24,,2025-09-24,Pre-Move In and Documentation,,,,,,,,,New Resident Workflow,,
+1208704778510683,2025-09-24,,2025-09-24,Complete Lease Agreement and Collect Financials - Leasing Agent,,,,,,,"Due Date: At least 7 days before move-in.
+
+Description: Ensure the lease agreement is fully executed.",,Pre-Move In and Documentation,,
+1208704778510684,2025-09-24,,2025-09-24,Sign new leases,,,,,,,,,Complete Lease Agreement and Collect Financials - Leasing Agent,,
+1208704778510685,2025-09-24,,2025-09-24,Collect first month's rent and the security deposit.,,,,,,,,,Complete Lease Agreement and Collect Financials - Leasing Agent,,
+1208704778510686,2025-09-24,,2025-09-24,Ensure the security deposit does not exceed two months' rent as per Iowa law and is held in a separate bank account.,,,,,,,,,Complete Lease Agreement and Collect Financials - Leasing Agent,,
+1211455194280507,2025-09-24,,2025-09-24,Collect Tenant Information & Set Up in AppFolio - Property Manager,,,,,,,"    Due Date: 5 days before move-in.
+
+    Description: Enter the new tenant's information into the AppFolio property management system. This is crucial for rent collection, communication, and maintenance tracking.
+",,Pre-Move In and Documentation,,
+1211455194280509,2025-09-24,,2025-09-24,Collect all tenants contact info/#,,,,,,,,,Collect Tenant Information & Set Up in AppFolio - Property Manager,,
+1211455194280510,2025-09-24,,2025-09-24,Setup in appfolio,,,,,,,,,Collect Tenant Information & Set Up in AppFolio - Property Manager,,
+1211455194280511,2025-09-24,2025-09-30T16:40:00Z,2025-09-30T16:40:00Z,Complete LIHTC Initial Certification - Compliance Coordinator,,,,,,,"    Due Date: 3 days before move-in.
+
+    Description: Ensure the Tenant Income Certification (TIC) and all supporting documentation are completed and signed. This is a critical step for program compliance.
+",,Pre-Move In and Documentation,,
+1211455194280512,2025-09-24,,2025-09-24,Collect Tenant Income Certificates,,,,,,,,,Complete LIHTC Initial Certification - Compliance Coordinator,,
+1211455194280513,2025-09-24,,2025-09-24,"Collect Social Security cards, birth certificates, and photo IDs for all household members.",,,,,,,,,Complete LIHTC Initial Certification - Compliance Coordinator,,
+1211455194280514,2025-09-24,,2025-09-24,"Verify all income sources with third-party documentation (e.g., last 3-6 months of pay stubs, Social Security award letters, or bank statements).",,,,,,,,,Complete LIHTC Initial Certification - Compliance Coordinator,,
+1211455194280515,2025-09-24,,2025-09-24,"Obtain an Asset Self-Certification form for all assets, verifying any with documentation if they exceed the LIHTC threshold.",,,,,,,,,Complete LIHTC Initial Certification - Compliance Coordinator,,
+1211455194280516,2025-09-24,,2025-09-24,Complete and obtain a signed student status certification for all household members.,,,,,,,,,Complete LIHTC Initial Certification - Compliance Coordinator,,
+1211455194280517,2025-09-24,,2025-09-24,Provide and have the tenant sign the required Violence Against Women Act (VAWA) Notice of Occupancy Rights and the VAWA Lease Addendum.,,,,,,,,,Complete LIHTC Initial Certification - Compliance Coordinator,,
+1211455194280518,2025-09-24,,2025-09-24,Confirm the household's annual income is at or below the current IFA-published income limit for their family size.,,,,,,,,,Complete LIHTC Initial Certification - Compliance Coordinator,,
+1211455194280519,2025-09-24,,2025-09-24,Welcome & Orientation,,,,,,,,,New Resident Workflow,,
+1211455194280521,2025-09-24,,2025-09-24,Conduct Move-In Walk-Through & Orientation - Property Manager,,,,,,,"    Due Date: On the move-in date.
+
+    Description: Greet the resident, hand over the keys, and conduct a joint inspection of the unit. This is also the time to review key operational procedures and community programs.
+
+",,Welcome & Orientation,,
+1211455194280523,2025-09-24,,2025-09-24,Review the signed move-in inspection report with the tenant and take additional photos if necessary.,,,,,,,,,Conduct Move-In Walk-Through & Orientation - Property Manager,,
+1211455194280524,2025-09-24,,2025-09-24,Review Property and Community Information - Property Manager,,,,,,,"    Due Date: On the move-in date.
+
+    Description: Provide the resident with a Welcome Packet and verbally review all important information. This is where you introduce the unique community programs.
+
+",,Welcome & Orientation,,
+1211455194280526,2025-09-24,,2025-09-24,"Share renovation plans (LVP and paint in halls, painting or staining exterior siding/brick, security doors with key fobs for building access, exterior lights)",,,,,,,,,Review Property and Community Information - Property Manager,,
+1211455194280527,2025-09-24,,2025-09-24,"Share custodial program/expectation (cleaner comes through your building 1hr per week to clean hallways, expect you to treat them with respect and clean up any messes you make.)",,,,,,,,,Review Property and Community Information - Property Manager,,
+1211455194280528,2025-09-24,,2025-09-24,Share 10 Step Resident wellness program,,,,,,,,,Review Property and Community Information - Property Manager,,
+1211455194280529,2025-09-24,,2025-09-24,Share Referrals Program (1 month free rent + live next to a friend if they are approved AND they are renewed for a 2nd year),,,,,,,,,Review Property and Community Information - Property Manager,,
+1211455194280525,2025-09-24,,2025-09-24,Review Maintenance & Emergency Procedures - Property Manager,,,,,,,"    Due Date: On the move-in date.
+
+    Description: Make sure the resident knows how to handle maintenance requests and who to contact in an emergency.
+
+",,Welcome & Orientation,,
+1211455194280530,2025-09-24,,2025-09-24,Collect maintenance requests,,,,,,,,,Review Maintenance & Emergency Procedures - Property Manager,,
+1211455194280531,2025-09-24,,2025-09-24,Share Maintenance QR code/locations,,,,,,,,,Review Maintenance & Emergency Procedures - Property Manager,,
+1211455196964274,2025-09-24,,2025-09-24,Share office hours schedule,,,,,,,,,Review Maintenance & Emergency Procedures - Property Manager,,
+1211455196964275,2025-09-24,,2025-09-24,Share emergency telephone #,,,,,,,,,Review Maintenance & Emergency Procedures - Property Manager,,
+1211455196964276,2025-09-24,,2025-09-24,Set Clear Expectations and Offer Opportunities - Property Manager,,,,,,,"    Due Date: On the move-in date.
+
+    Description: Be transparent about the rules and regulations outlined in the lease.
+",,Welcome & Orientation,,
+1211455196964277,2025-09-24,,2025-09-24,Make clear delinquency/eviction rules,,,,,,,,,Set Clear Expectations and Offer Opportunities - Property Manager,,
+1211455196964278,2025-09-24,,2025-09-24,Offer options make extra $ short term,,,,,,,,,Set Clear Expectations and Offer Opportunities - Property Manager,,
+1211455196964279,2025-09-24,,2025-09-24,Post-Move-In & Follow-Up,,,,,,,,,New Resident Workflow,,
+1211455196964280,2025-09-24,,2025-09-24,Send Post-Move-In Follow-Up - Property Manager,,,,,,,"    Due Date: 7 days after move-in.
+    Description: Send a brief email or text to the new resident to check in.
+",,Post-Move-In & Follow-Up,,
+1211455196964281,2025-09-24,,2025-09-24,Ask if they have any questions and if everything is working correctly in the unit.,,,,,,,,,Send Post-Move-In Follow-Up - Property Manager,,
+1211455196964282,2025-09-24,,2025-09-24,Remind them of the Maintenance QR code and the first event for the 10-Step Resident Wellness Program in the upcoming month.,,,,,,,,,Send Post-Move-In Follow-Up - Property Manager,,
+1211455196964283,2025-09-24,,2025-09-24,File the fully executed lease agreement and all LIHTC compliance documentation in the tenant's file.,,,,,,,,,Send Post-Move-In Follow-Up - Property Manager,,
+1211447932621797,2025-09-23,,2025-09-24,Maintenance Workflow,Untitled section,,,,,,,Apollo Apartments,,,
+1208704778510638,2025-09-24,,2025-09-24,Receive and Triage,,,,,,,,,Maintenance Workflow,,
+1208704778510639,2025-09-24,,2025-09-24,New Maintenance Request Notification  - Maintenance Coordinator,,,,,,,"Due Date: Same day as submission.
+
+Description: An automated task is created in Asana from the AppFolio work order.
+
+Rule: When a new maintenance request is submitted in AppFolio, a new task is automatically created in this Asana project.",,Receive and Triage,,
+1208704778510640,2025-09-24,,2025-09-24,Triage & Prioritize Request  - Maintenance Coordinator,,,,,,,"Due Date: Within 4 hours of receiving the request.
+
+Description: Review the request details, photos, and any notes from the tenant. Assign a priority level based on severity.
+
+High Priority (Emergency): Affects health or safety (e.g., no heat in winter, major water leak, fire hazard). Action: Immediate contact and dispatch.
+
+Medium Priority: Significantly impacts a tenant's quality of life but isn't an immediate hazard (e.g., broken appliance, minor leak). Action: Schedule within 48-72 hours.
+
+Low Priority: Cosmetic or minor non-essential repairs (e.g., broken blinds, dripping faucet). Action: Schedule within 7 days or bundle with other non-urgent repairs.",,Receive and Triage,,
+1208704778510641,2025-09-24,,2025-09-24,Acknowledge Receipt with Tenant  - Maintenance Coordinator,,,,,,,"Due Date: Same day as the request.
+
+Description: Send a confirmation message to the tenant via the AppFolio portal. Inform them the request has been received and provide an estimated timeline for the repair.
+
+Note: Proactive communication can prevent a tenant from escalating the issue to a formal written notice, which could trigger a tight legal repair deadline under Iowa law.",,Receive and Triage,,
+1208704778510642,2025-09-24,,2025-09-24,Schedule Repair Appointment - Maintenance Coordinator,,,,,,,,,Receive and Triage,,
+1208704778510643,2025-09-24,,2025-09-24,Schedule and Dispatch,,,,,,,,,Maintenance Workflow,,
+1208704778510644,2025-09-24,,2025-09-24,"Schedule Repair Appointment
+​- Maintenance Coordinator",,,,,,,"Due Date: Based on the assigned priority level.
+
+Description: Coordinate with the tenant to set a specific date and time for the repair.",,Schedule and Dispatch,,
+1208704778510645,2025-09-24,,2025-09-24,"For non-emergency repairs, send a written ""Notice of Entry"" to the tenant. Iowa Code § 562A.19 requires landlords to give at least 24 hours' notice before entering a unit for repairs, unless it's an emergency.",,,,,,,,,"Schedule Repair Appointment
+​- Maintenance Coordinator",,
+1208704778510646,2025-09-24,,2025-09-24,Assign the work order to an in-house technician or an approved third-party vendor in AppFolio.,,,,,,,,,"Schedule Repair Appointment
+​- Maintenance Coordinator",,
+1208704778510647,2025-09-24,,2025-09-24,"Dispatch Technician
+​- Maintenance Coordinator",,,,,,,"Due Date: Day of the scheduled repair.
+
+Description: Ensure the technician has all the necessary information, tools, and parts for the job.",,Schedule and Dispatch,,
+1208704778510648,2025-09-24,,2025-09-24,"Technician completes the repair and logs notes, photos, and time in AppFolio.",,,,,,,,,"Dispatch Technician
+​- Maintenance Coordinator",,
+1208704778510649,2025-09-24,,2025-09-24,"Follow Up with Tenant
+​- Maintenance Coordinator",,,,,,,"Due Date: Day after the repair is marked complete.
+
+Description: Contact the tenant to confirm the repair was completed to their satisfaction. This is a crucial step for tenant relations and to close the loop on the work order.",,Schedule and Dispatch,,
+1208704778510650,2025-09-24,,2025-09-24,Close Out & Documentation,,,,,,,,,Maintenance Workflow,,
+1208704778510651,2025-09-24,,2025-09-24,"Review & Close Work Order
+​- Maintenance Coordinator",,,,,,,"Due Date: Within 24 hours of repair completion.
+
+Description: Review the technician's notes, photos, and expenses in AppFolio to confirm the job is done.",,Close Out & Documentation,,
+1208704778510652,2025-09-24,,2025-09-24,Upload any receipts or invoices related to the repair.,,,,,,,,,"Review & Close Work Order
+​- Maintenance Coordinator",,
+1208704778510653,2025-09-24,,2025-09-24,"Mark the work order as ""Closed"" in AppFolio and the corresponding task as ""Complete"" in Asana.",,,,,,,,,"Review & Close Work Order
+​- Maintenance Coordinator",,
+1208704778510654,2025-09-24,,2025-09-24,"Final Documentation
+​-  Maintenance Coordinator",,,,,,,"Due Date: Within 7 days of repair completion.
+
+Description: Ensure all communication, documentation, and expenses are properly filed within the tenant's record for future reference or in case of a legal dispute.
+
+Note: Maintaining clear records is essential. If a tenant formally serves a landlord with a written notice to repair, the landlord has seven days to make the repair, or the tenant may have legal recourse. Proper documentation proves the landlord's timely actions.",,Close Out & Documentation,,
+1211447932621801,2025-09-23,,2025-09-24,Turnover Workflow,Untitled section,,,,,,,Apollo Apartments,,,
+1208704778510613,2025-09-24,,2025-09-24,Pre-Move-Out Phase - PM,,,,,,,,,Turnover Workflow,,
+1208704778510614,2025-09-24,,2025-09-24,Send Move-Out Instructions,,,,,,,"Due Date: 30 days before the lease end date.
+
+Description: Provide the tenant with a checklist of move-out procedures, including cleaning expectations, utility shut-off protocols, and key return instructions.",,Pre-Move-Out Phase - PM,,
+1208704778510615,2025-09-24,,2025-09-24,Remind the tenant to provide a forwarding address for the security deposit return. Iowa law requires a landlord to return the security deposit within 30 days of the tenancy's end and receipt of the tenant's new mailing address.,,,,,,,,,Send Move-Out Instructions,,
+1208704778510616,2025-09-24,,2025-09-24,Include a copy of the original move-in inspection report for reference.,,,,,,,,,Send Move-Out Instructions,,
+1208704778510617,2025-09-24,,2025-09-24,Schedule Final Walkthrough,,,,,,,"Due Date: A few days before or on the lease end date.
+
+Description: Arrange a final inspection with the tenant to assess the property's condition. This is an opportunity to document any damages and discuss potential deductions from the security deposit.",,Pre-Move-Out Phase - PM,,
+1208704778510618,2025-09-24,,2025-09-24,Take detailed photos and videos of the unit's condition.,,,,,,,,,Schedule Final Walkthrough,,
+1208704778510619,2025-09-24,,2025-09-24,Move-Out Day & Initial Inspection - PM,,,,,,,,,Turnover Workflow,,
+1208704778510620,2025-09-24,,2025-09-24,Receive Keys and Confirm Vacancy ,,,,,,,"Due Date: Lease end date.
+
+Description: Collect all keys, fobs, and garage openers. Ensure the unit is completely vacated of the tenant and their belongings.",,Move-Out Day & Initial Inspection - PM,,
+1208704778510621,2025-09-24,,2025-09-24,Perform Detailed Move-Out Inspection - Maintenance Lead,,,,,,,"Due Date: Within 24 hours of vacancy.
+
+Description: Conduct a thorough inspection, comparing the current condition to the move-in report. Document all damages with photos and notes.",,Move-Out Day & Initial Inspection - PM,,
+1208704778510622,2025-09-24,,2025-09-24,"Identify items considered ""beyond ordinary wear and tear"" (e.g., holes in walls, large stains on carpet). Iowa law allows for deductions for damages, but not for normal wear and tear.",,,,,,,,,Perform Detailed Move-Out Inspection - Maintenance Lead,,
+1208704778510623,2025-09-24,,2025-09-24,Note any remaining tenant property.,,,,,,,,,Perform Detailed Move-Out Inspection - Maintenance Lead,,
+1208704778510624,2025-09-24,,2025-09-24,Calculate Security Deposit Deductions,,,,,,,"Due Date: Within 15 days of vacancy.
+
+Description: Compile a written, itemized statement of any deductions from the security deposit, including specific reasons for each charge (e.g., ""cost to repair drywall,"" ""cost to replace broken window"").",,Move-Out Day & Initial Inspection - PM,,
+1208704778510625,2025-09-24,,2025-09-24,Attach copies of receipts or quotes for repairs.,,,,,,,,,Calculate Security Deposit Deductions,,
+1208704778510626,2025-09-24,,2025-09-24,Security Deposit & Property Handling,,,,,,,,,Move-Out Day & Initial Inspection - PM,,
+1208704778510627,2025-09-24,,2025-09-24,Return Security Deposit or Send Itemized Statement,,,,,,,"Due Date: Within 30 days of the termination of the tenancy and receipt of the tenant's forwarding address.
+
+Description:
+
+If no deductions, mail the full security deposit to the tenant.
+
+If deductions are made, send the itemized statement and the remaining deposit balance via certified mail to the forwarding address.
+
+Iowa law states that if the landlord fails to provide the written statement within 30 days, they forfeit all rights to withhold any portion of the deposit.",,Security Deposit & Property Handling,,
+1208704778510628,2025-09-24,,2025-09-24,Handle Abandoned Property,,,,,,,"Due Date: After confirming abandonment.
+
+Description: If the tenant leaves personal property behind, Iowa Code § 562A.29 allows a landlord to dispose of it as they see fit after the property has been deemed abandoned.
+
+Note: While the law is permissive, it's a best practice to document the property left behind with photos and make a reasonable attempt to contact the tenant before disposal to avoid disputes.",,Security Deposit & Property Handling,,
+1208704778510629,2025-09-24,,2025-09-24,Take photos of all abandoned items.,,,,,,,,,Handle Abandoned Property,,
+1208704778510630,2025-09-24,,2025-09-24,"If practical, box up and store valuable items for a brief period (e.g., 7 days).",,,,,,,,,Handle Abandoned Property,,
+1208704778510631,2025-09-24,,2025-09-24,Turnover & Rerenting,,,,,,,,,Turnover Workflow,,
+1208704778510632,2025-09-24,,2025-09-24,Complete Turnover Maintenance and Cleaning - Maintenance Team,,,,,,,"Due Date: Immediately after the unit is vacant and inspected.
+
+Description: Complete all necessary cleaning, painting, and repairs to prepare the unit for the next occupant.",,Turnover & Rerenting,,
+1208704778510633,2025-09-24,,2025-09-24,Create a punch list from the move-out inspection.,,,,,,,,,Complete Turnover Maintenance and Cleaning - Maintenance Team,,
+1208704778510634,2025-09-24,,2025-09-24,Schedule professional cleaning and carpet cleaning.,,,,,,,,,Complete Turnover Maintenance and Cleaning - Maintenance Team,,
+1208704778510656,2025-09-24,,2025-09-24,Create a new move-in inspection report to be used with the new tenant.,,,,,,,Due Date: As soon as the unit is clean and presentable.,,Turnover & Rerenting,,
+1208704778510657,2025-09-24,,2025-09-24,Start Vacancy Workflow,,,,,,,,,Turnover & Rerenting,,
+1211447932621803,2025-09-23,,2025-09-23,Renewal Workflow,Untitled section,,,,,,,Apollo Apartments,,,
+1211447933524556,2025-09-23,,2025-09-23,90 Days before Lease Expiration - Compliance Coordinator,,,,,,,,,Renewal Workflow,,
+1211447933524558,2025-09-23,,2025-09-23,"Generate and Send ""Intent to Renew"" Notice",,,,,,,"    Due Date: 90 days before the lease expiration.
+    Description: Prepare a written notice to the tenant to determine their intent to renew the lease. Iowa Code does not specify a notice period for lease termination or renewal, so providing ample notice is a best practice. This notice should also inform the tenant about the upcoming annual recertification process.
+",,90 Days before Lease Expiration - Compliance Coordinator,,
+1211447933524559,2025-09-23,,2025-09-23,"Include the LIHTC Recertification Packet with the notice. This packet should contain forms for income, asset, and household composition verification.
+
+",,,,,,,,,"Generate and Send ""Intent to Renew"" Notice",,
+1211447933524557,2025-09-23,,2025-09-23,60 Days Before Lease Expiration - Compliance Coordinator,,,,,,,,,Renewal Workflow,,
+1211447933524560,2025-09-23,,2025-09-23,Follow Up on Recertification Packet,,,,,,,"    Due Date: 60 days before the lease expiration.
+    Description: Remind the tenant to return the completed recertification packet. LIHTC rules are strict, and you cannot renew a lease without a completed recertification.
+",,60 Days Before Lease Expiration - Compliance Coordinator,,
+1211447933524561,2025-09-23,,2025-09-23,Call the Tenant,,,,,,,,,Follow Up on Recertification Packet,,
+1211447933524562,2025-09-23,,2025-09-23,Send a reminder email or certified letter,,,,,,,,,Follow Up on Recertification Packet,,
+1211447933524563,2025-09-23,,2025-09-23,Review and Verify Recertification Documents,,,,,,,"    Due Date: 45 days before the lease expiration.
+    Description: Upon receiving the completed packet, meticulously review all documents for accuracy and completeness.
+",,60 Days Before Lease Expiration - Compliance Coordinator,,
+1211447933524564,2025-09-23,,2025-09-23,"Verify all sources of income using third-party documentation (e.g., pay stubs, bank statements, Social Security award letters).",,,,,,,,,Review and Verify Recertification Documents,,
+1211447933524565,2025-09-23,,2025-09-23,Check for any changes in household composition.,,,,,,,,,Review and Verify Recertification Documents,,
+1211447933524566,2025-09-23,,2025-09-23,Calculate the household's annual income and ensure it remains below the LIHTC Area Median Income (AMI) limit for their household size.,,,,,,,,,Review and Verify Recertification Documents,,
+1211447933524567,2025-09-23,,2025-09-23,"If the income calculation indicates the household is no longer income-eligible, flag the file for review by the Compliance Manager.",,,,,,,,,Review and Verify Recertification Documents,,
+1211447933524568,2025-09-23,,2025-09-23,30-45 Days Before Lease Expiration - Compliance Coordinator,,,,,,,,,Renewal Workflow,,
+1211447933524569,2025-09-23,,2025-09-23,Prepare and Issue Lease Renewal Agreement,,,,,,,"    Due Date: 30-45 days before the lease expiration.
+    Description: Draft the new lease agreement. This agreement must reflect the LIHTC rent-restricted limits and any changes in rent due to the recertification.
+",,30-45 Days Before Lease Expiration - Compliance Coordinator,,
+1211447933524570,2025-09-23,,2025-09-23,Calculate the new rent amount based on the household income and current utility allowance.,,,,,,,,,Prepare and Issue Lease Renewal Agreement,,
+1211447933524571,2025-09-23,,2025-09-23,Send the new lease agreement to the tenant for signature. Iowa law (Iowa Code § 562A.13) requires written notice of any rent increase at least 30 days before the effective date.,,,,,,,,,Prepare and Issue Lease Renewal Agreement,,
+1211447933524572,2025-09-23,,2025-09-23,Handle Non-Compliance (If Applicable),,,,,,,"    Due Date: Immediately after the 30-day notice period for rent increase.
+    Description: If a tenant fails to recertify or their income is over the limit, determine the correct course of action.
+
+    Note: For LIHTC, if a tenant's income exceeds the limit, they may be required to pay market-rate rent. However, they cannot be evicted for this reason, provided their income was within the limits at initial move-in. The LIHTC unit may also become a ""market rate"" unit, which can affect the property's overall compliance.
+",,30-45 Days Before Lease Expiration - Compliance Coordinator,,
+1211447933524574,2025-09-23,,2025-09-23,"Consult with a compliance specialist to confirm the appropriate status of the unit (e.g., ""over-income"" or ""market rate"").",,,,,,,,,Handle Non-Compliance (If Applicable),,
+1211447933524575,2025-09-23,,2025-09-23," If non-compliance is due to failure to submit paperwork, serve a written notice of non-compliance. This can be considered a lease violation, and depending on your lease, you can then proceed with termination.",,,,,,,,,Handle Non-Compliance (If Applicable),,
+1211447933524576,2025-09-23,,2025-09-23,After Lease Renewal - Compliance Coordinator,,,,,,,,,Renewal Workflow,,
+1211447933524577,2025-09-23,,2025-09-23,Finalize and File All Documents,,,,,,,"    Due Date: Within 7 days of lease renewal.
+    Description: Scan and file all signed lease agreements and completed recertification documents in the tenant's file.
+",,After Lease Renewal - Compliance Coordinator,,
+1211447933524578,2025-09-23,,2025-09-23,Update the property management software with the new lease term and rent.,,,,,,,,,Finalize and File All Documents,,
+1211447933524579,2025-09-23,,2025-09-23,Upload the Tenant Income Certification (TIC) and all supporting documents to your LIHTC compliance software or record-keeping system for audit.,,,,,,,,,Finalize and File All Documents,,
+1211447933524580,2025-09-23,,2025-09-23,Prepare for Annual Owner's Certification of Continuing Program Compliance (Form 8609) - Accountant,,,,,,,"    Due Date: Annually, as required by the state housing finance agency.
+    Description: Compile all recertification data for the year to complete the annual IRS and state agency compliance reports. This includes a certification that all LIHTC units meet the applicable fraction, income limits, and rent restrictions.
+",,After Lease Renewal - Compliance Coordinator,,
+1211447932621805,2025-09-23,,2025-09-23,Delinquent Rent Workflow,Untitled section,,,,,,,Apollo Apartments,,,
+1211447932621807,2025-09-23,,2025-09-23,Initial Actions - Property Manager,,,,,,,,,Delinquent Rent Workflow,,
+1211447932621812,2025-09-23,,2025-09-23,Check for Rent Payment,,,,,,,"Due Day after Rent is due
+
+Confirm rent has not been paid. Check all payment methods (e.g., online portal, check).",,Initial Actions - Property Manager,,
+1211447932621815,2025-09-23,,2025-09-23,Send friendly reminder email/text,,,,,,,,,Check for Rent Payment,,
+1211447932621816,2025-09-23,,2025-09-23,Calculate Late Fees,,,,,,,"Due Date: As soon as a late fee can be charged, per the lease agreement.
+
+Calculate the late fee in accordance with Iowa Code § 562A.9.
+    Note: If rent is under $700, the late fee is capped at $12 per day or a total of $60 per month.
+
+    If rent is over $700, the late fee is capped at $20 per day or a total of $100 per month.
+",,Initial Actions - Property Manager,,
+1211447932621817,2025-09-23,,2025-09-23,Prepare & Serve the 3-Day Notice,,,,,,,"    Due Date: Day after the grace period ends (if applicable) or as soon as the late fee is applied.
+
+    Description: Create a written notice of nonpayment. Iowa law requires a minimum 3-day notice to quit for nonpayment of rent. This notice must state that the lease will terminate if the rent is not paid within three days.
+",,Initial Actions - Property Manager,,
+1211447932621818,2025-09-23,,2025-09-23,Print Notice,,,,,,,,,Prepare & Serve the 3-Day Notice,,
+1211447932621819,2025-09-23,,2025-09-23,Serve Notice using one of the legally accepted methods,,,,,,,"    Personal delivery (tenant signs an acknowledgment).
+    Posting on the main entrance and sending via certified and regular mail.
+    Personal service by a process server or sheriff.
+",,Prepare & Serve the 3-Day Notice,,
+1211447933524547,2025-09-23,,2025-09-23,Document method of service and delivery,,,,,,,Take a picture and upload here to asana with date,,Prepare & Serve the 3-Day Notice,,
+1211447932621809,2025-09-23,,2025-09-23,Post-Notice Follow-Up,,,,,,,,,Delinquent Rent Workflow,,
+1211447933524548,2025-09-23,,2025-09-23,(Days 1-3) Monitor for Payment - PM,,,,,,,"    Due Date: 3 days after notice is served.
+    Description: Regularly check for payment. If the tenant pays the full amount within the 3-day period, the lease termination is voided, and the eviction process stops.
+    Rule: If the task is marked complete and payment is received, move this task to a ""Paid"" section and automatically create a ""Record Payment"" task.
+",,Post-Notice Follow-Up,,
+1211447933524551,2025-09-23,,2025-09-23,(Day 2) Attempt Contact with Tenant - PM,,,,,,,"    Due Date: Day 2 of the 3-day notice period.
+    Description: Make a good faith effort to contact the tenant to confirm they received the notice and to discuss a payment plan or next steps.
+",,Post-Notice Follow-Up,,
+1211447932621810,2025-09-23,,2025-09-24,Escalation to Eviction,,,,,,,,,Delinquent Rent Workflow,,
+1211447933524552,2025-09-23,,2025-09-23,Consult with Legal Counsel - Legal Team,,,,,,,"    Due Date: After the 3-day notice period expires.
+    Description: Before filing for eviction, confirm with a lawyer that all prior steps were completed correctly according to Iowa law.
+",,Escalation to Eviction,,
+1211447933524553,2025-09-23,,2025-09-23,File Forcible Entry and Detainer (FED) - Legal Team,,,,,,,"    Due Date: As soon as legally permitted after consulting with counsel.
+    Description: File an eviction lawsuit in court. The court will then issue a court date and a court order to serve the tenant with a Notice of Hearing and a Petition for Forcible Entry and Detainer.
+",,Escalation to Eviction,,
+1211447933524554,2025-09-23,,2025-09-23,Attend Court Hearing - Legal Team,,,,,,,"    Due Date: Court date.
+    Description: Present the case to the judge, providing all documentation, including the lease agreement, payment ledger, and proof of service for the 3-day notice.
+",,Escalation to Eviction,,
+1211447933524555,2025-09-23,,2025-09-23,Schedule Writ of Possession/Removal - Legal Team,,,,,,,"    Due Date: After receiving a favorable judgment.
+    Description: If the court rules in your favor, file a Writ of Possession with the sheriff's office. The sheriff will then serve the tenant with a notice to vacate and, if necessary, oversee the removal of the tenant and their belongings.
+",,Escalation to Eviction,,
+1208704778510658,2025-09-24,,2025-09-24,Start Turnover Workflow,,,,,,,,,Escalation to Eviction,,

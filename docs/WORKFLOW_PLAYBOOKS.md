@@ -36,3 +36,4 @@ See `docs/APOLLO_APARTMENTS_WORKFLOW_PLAN.md` for the Apollo pilot's detailed va
 - Pull occupancy, days-on-market, rent comps.
 - Flag units needing promotions or pricing adjustments.
 - Blend marketing channel feedback loops for leasing strategy.
+- Lean on the `VacancyInsights` payload (see `docs/VACANCY_INSIGHTS.md`) for readiness, blockers, and automation triggers that feed the dashboard cards and demo scripts.
