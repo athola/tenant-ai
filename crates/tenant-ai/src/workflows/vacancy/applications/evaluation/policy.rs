@@ -92,7 +92,10 @@ pub(crate) fn decide_outcome(
         };
     }
 
-    if signals.rent_to_income > config.minimum_rent_to_income_ratio {
+    let required_rounded = (config.minimum_rent_to_income_ratio * 100.0).round() / 100.0;
+    let actual_rounded = (signals.rent_to_income * 100.0).round() / 100.0;
+
+    if actual_rounded > required_rounded {
         return ApplicationDecision::Denied(DenialReason::InsufficientIncome {
             required_ratio: config.minimum_rent_to_income_ratio,
             actual_ratio: signals.rent_to_income,

@@ -1,6 +1,6 @@
-# Agentic Property Orchestrator
+# tenant.ai
 
-Agentic Property Orchestrator is a Rust-based web service that unifies automated workflows across text, email, phone, and AppFolio tenant management. The initial binary is a lightweight Axum server that will evolve into a multi-channel automation hub for property management teams.
+tenant.ai is a Rust-based web service that unifies automated workflows across text, email, phone, and AppFolio tenant management. The initial binary is a lightweight Axum server that will evolve into a multi-channel automation hub for property management teams.
 
 ## Getting Started
 
@@ -97,6 +97,13 @@ cargo run -- demo \
 
 # Run the vacancy narrative only (skip the application intake segment)
 cargo run -- demo --skip-application
+
+# Use local files for marketing assets and reports
+cargo run -- demo \
+  --vacancy-start 2025-09-24 \
+  --target-move-in 2025-10-08 \
+  --photos-dir /path/to/unit/photos \
+  --output-dir /path/to/save/reports
 ```
 
 - `--include-tasks` mirrors the `--list-tasks` mode for investors who want evidence of every automation hook.
@@ -104,6 +111,9 @@ cargo run -- demo --skip-application
 - Vacancy dates, `--today`, and the CSV path all accept overrides so you can align with any portfolio timeline.
 - The demo adds a communication automation snapshot (per-channel lead counts, automation rates, SLA attainment, escalations) to show omnichannel coverage on par with super.ai’s leasing assistant positioning.
 - When the application intake segment runs, the CLI walks through submission, evaluation, score breakdown, rent-to-income calculations, public status payloads, and alert fan-out. This exceeds the scope of many AppFolio-integrated competitors who stop at lead response.
+- `--photos-dir` tells the demo to use photos from a local directory. The directory should contain image files (e.g., `kitchen.jpg`, `bedroom.png`) for the property.
+- `--output-dir` specifies a directory where the generated marketing report (an HTML file) will be saved.
+- This local file workflow replaces the previous Google Drive integration, allowing for easy offline demos with real assets.
 
 ### HTTP parity
 
