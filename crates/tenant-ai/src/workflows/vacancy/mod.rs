@@ -1,4 +1,5 @@
 pub mod applications;
+pub mod marketing;
 
 mod blueprint;
 pub mod domain;

@@ -15,7 +15,9 @@ chrono = { version = "0.4", features = ["std", "serde"] }
 csv = "1"
 dotenvy = "0.15"
 thiserror = "1"
+google-drive3 = "6.0.0"
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+mime = "0.3"
 
 [dev-dependencies]
-tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 tower = { version = "0.4", features = ["util"] }
